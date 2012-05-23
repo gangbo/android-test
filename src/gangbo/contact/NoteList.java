@@ -75,8 +75,6 @@ public class NoteList extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
-				Log.v("====", "position=" + position);
-				Log.v("====", "id=" + id);
 				Intent intent = new Intent(Constants.ACTION_EDIT);
 				Bundle bundle = new Bundle();
 				bundle.putLong("id", id);
@@ -107,6 +105,9 @@ public class NoteList extends Activity {
 			return true;
 		case R.id.list_item_share:		
 			shareIt(info.id);
+			return true;
+		case R.id.item_edit:
+			
 			return true;
 		default:
 			return super.onContextItemSelected(item);
