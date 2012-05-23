@@ -8,6 +8,10 @@
 	<string name="local_service_label">myService haha</string>
 	
 	<string name="new_note">写日记</string>
+	<string name="list_edit">编辑</string>
+	<string name="edit">编辑</string>
+	<string name="delete">删除</string>
+	
 	<string name="play">播放</string>
 	<string name="stop">停止</string>
 	<string name="hint">写点什么呢</string>
@@ -23,5 +27,6 @@
     </string-array>
     
 	<string name="share_bt">分享</string>
-    
+	<string name="share_send">分享(发送)</string>
+   <string name="search">搜索</string> 
 </resources>

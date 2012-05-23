@@ -4,8 +4,7 @@
     android:layout_height="fill_parent"
     android:gravity="top"
     android:orientation="vertical" >
-
-    <EditText
+    <EditText
         android:id="@+id/detail"
         android:layout_width="fill_parent"
         android:layout_height="438dp"
@@ -25,6 +24,4 @@
         android:layout_height="wrap_content"
         android:text="Share" />
 
-
-	
 </LinearLayout>	

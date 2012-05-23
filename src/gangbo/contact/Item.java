@@ -32,14 +32,7 @@ public class Item extends Activity {
 			} finally {
 				c.close();
 			}
-		} else if (intent.getAction().equals(Constants.ACTION_NEW)) {
-
-		} else {
-			Log.w("error", "unknown action " + intent.getAction());
-			finish();
-			return;
 		}
-
 	}
 
 	public void onPause() {
@@ -51,6 +44,9 @@ public class Item extends Activity {
 
 	public void saveNote() {
 		String content = et.getText().toString();
+		Log.v("----",""+content.replaceAll(" ", "").length());
+		if (content.isEmpty() && content.replaceAll(" ", "").length()==0 )
+			return;
 		Intent intent = getIntent();
 		if (intent.getAction().equals(Constants.ACTION_EDIT)) {
 			Long id = intent.getExtras().getLong("id");
@@ -83,8 +79,6 @@ public class Item extends Activity {
 	}
 
 	public void shareIt() {
-		// TODO Auto-generated method stub
-		Log.v("----", "分享");
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("text/plain"); // 纯文本
 		/*
@@ -94,6 +88,7 @@ public class Item extends Activity {
 		 * u = Uri.fromFile(f); intent.putExtra(Intent.EXTRA_STREAM, u);
 		 */
 		intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
+		
 		intent.putExtra(Intent.EXTRA_TEXT, et.getText() + "[来自pjbaby]");
 		startActivity(Intent.createChooser(intent, getTitle()));
 	}
