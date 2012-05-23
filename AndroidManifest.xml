@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gangbo.contact"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".NoteList"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ArtistsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SongsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".AlbumsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".Item"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.note.NEW" />
+                <action android:name="com.note.EDIT" />
+                <category android:name="android.intent.category.DEFAULT"></category>   
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
