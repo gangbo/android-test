@@ -29,4 +29,8 @@
 	<string name="share_bt">分享</string>
 	<string name="share_send">分享(发送)</string>
    <string name="search">搜索</string> 
+   
+   <string name="alert_dialog_ok">okkkkk</string>
+   <string name="alert_dialog_cancel">cancel222</string>
+   
 </resources>

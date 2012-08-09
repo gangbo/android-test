@@ -25,6 +25,7 @@ public class NoteList extends Activity {
 	private ListView lv;
 	private Button bt_list_edit;
 	private Button bt_add;
+	private Button bt_web;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,6 @@ public class NoteList extends Activity {
 
 		bt_add = (Button) findViewById(R.id.new_bn);
 		bt_add.setOnClickListener(new OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Constants.ACTION_NEW);
 				// intent.addCategory(Constants.CATEGORY_DEFAULT);
@@ -44,11 +44,22 @@ public class NoteList extends Activity {
 		});
 		bt_list_edit = (Button) findViewById(R.id.list_edit);
 		bt_list_edit.setOnClickListener(new OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.v("-----bt_list_edit---------", "--");
+				v.clearFocus();
 				lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+			}
+		});
+		bt_web = (Button) findViewById(R.id.bt_web);
+		bt_web.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(getApplicationContext(), WebViewActivity.class);
+				// intent.addCategory(Constants.CATEGORY_DEFAULT);
+				startActivity(intent);
 			}
 		});
 	}
@@ -71,7 +82,6 @@ public class NoteList extends Activity {
 		}
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
